@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hello World</title>
+  <meta name="description" content="Usa A Venezuela y Panama">
+  <meta name="author" content="Kexport">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+
+<section class="container center">
+  <h1 class="titulos-fondo-claro">Calculadora</h1>
+  <span class="calcular">Para calcular el envío de tu carga, debes expresar los valores de las medidas en pulgadas, y el peso en libras.</span>
+  <div class="row">
+    <div class="calc-select">
+      <div class="input-field col s12 m4 offset-m4">
+        <select>
+          <option value="" disabled selected>Selecciona tu destino</option>
+          <option value="1">USA a Venezuela</option>
+          <option value="2">USA a Panamá</option>
+          <option value="3">Panamá a Venezuela</option>
+        </select>
+    <label>K-Export</label>
+  </div>
+    </div>
+    <!-- inputs y valores -->
+    <div class="col s12 m12">
+      <div class="input-field col m3">
+          <input id="length" placeholder="Medidas en pulgadas (inches)." id="largo" type="text" class="validate" onchange="print_prices();" required>
+          <label>LARGO</label>
+        </div>
+      <div class="input-field col m3">
+          <input id="width" placeholder="Medidas en pulgadas (inches)." id="ancho" type="text" class="validate" onchange="print_prices();" required>
+          <label>ANCHO</label>
+        </div>
+      <div class="input-field col m3">
+          <input id="height" placeholder="Medidas en pulgadas (inches)." id="alto" type="text" class="validate" onchange="print_prices();" required>
+          <label>ALTO</label>
+        </div>
+      <div class="input-field col m3">
+          <input id="weight" placeholder="Peso en libras (pounds)." id="peso" type="text" class="validate" onchange="print_prices();" required>
+          <label>PESO</label>
+        </div>
+        <!-- Al darle click al botón, se debe agregar otra caja. -->
+        <a class="waves-effect waves-light btn-large blue" href="#!">Agregar otro paquete</a>
+    </div>
+    <div class="col s12 calculo-r">
+      <!-- Respuesta de la calculadora -->
+      <h6>
+        El costo aéreo aproximado es de: <strong id="aereal">0</strong>
+      </h6>
+      <h6>
+        El costo marítimo aproximado es de: <strong id="maritime">0</strong>
+      </h6>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="init.js"></script>
+
+</body>
+</html>
