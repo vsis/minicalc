@@ -26,21 +26,36 @@ function maritime_price(volume, weight) {
 function get_price(aereal, height, width, length, weight) {
     var volume = height * width * length;
     if (aereal) {
-        return aereal_price(volume, weight) * 100 / 100;
+        return Math.round(aereal_price(volume, weight) * 100) / 100;
     } else {
-        return maritime_price(volume, weight) * 100 / 100;
+        return Math.round(maritime_price(volume, weight) * 100) / 100;
     }
 }
 
 function print_prices() {
-    var height = $('#height')[0].value;
-    var width  = $('#width')[0].value;
-    var length = $('#length')[0].value;
-    var weight = $('#weight')[0].value;
+    var height_tags = document.getElementsByName('height');
+    var width_tags  = document.getElementsByName('width');
+    var length_tags = document.getElementsByName('height');
+    var weight_tags = document.getElementsByName('weight');
+    var boxes = height_tags.length;
+    var total_maritime = 0;
+    var total_aereal = 0;
+    for (var i = 0; i < boxes; i++) {
+        var height = height_tags[i].value;
+        var width  = width_tags[i].value;
+        var length = length_tags[i].value;
+        var weight = weight_tags[i].value;
+        var maritime = get_price(false, height, width, length, weight);
+        var aereal   = get_price(true, height, width, length, weight);
+        total_maritime += maritime;
+        total_aereal += aereal;
+    }
+    $('#aereal').html(total_aereal);
+    $('#maritime').html(total_maritime);
+}
 
-    var maritime = get_price(false, height, width, length, weight);
-    var aereal   = get_price(true, height, width, length, weight);
-
-    $('#aereal').html(aereal);
-    $('#maritime').html(maritime);
+function clone_box() {
+    var box = $('#box')[0];
+    var cloned = box.cloneNode(true);
+    box.parentNode.insertBefore(cloned, box);
 }

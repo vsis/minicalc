@@ -29,24 +29,26 @@
     </div>
     <!-- inputs y valores -->
     <div class="col s12 m12">
-      <div class="input-field col m3">
-          <input id="length" placeholder="Medidas en pulgadas (inches)." id="largo" type="text" class="validate" onchange="print_prices();" required>
-          <label>LARGO</label>
-        </div>
-      <div class="input-field col m3">
-          <input id="width" placeholder="Medidas en pulgadas (inches)." id="ancho" type="text" class="validate" onchange="print_prices();" required>
-          <label>ANCHO</label>
-        </div>
-      <div class="input-field col m3">
-          <input id="height" placeholder="Medidas en pulgadas (inches)." id="alto" type="text" class="validate" onchange="print_prices();" required>
-          <label>ALTO</label>
-        </div>
-      <div class="input-field col m3">
-          <input id="weight" placeholder="Peso en libras (pounds)." id="peso" type="text" class="validate" onchange="print_prices();" required>
-          <label>PESO</label>
-        </div>
+      <div id="box">
+          <div class="input-field col m3">
+              <input name="length" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <label>LARGO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="width" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <label>ANCHO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="height" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <label>ALTO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="weight" placeholder="Peso en libras (pounds)." type="text" class="validate" onchange="print_prices();" required>
+              <label>PESO</label>
+          </div>
+      </div>
         <!-- Al darle click al botón, se debe agregar otra caja. -->
-        <a class="waves-effect waves-light btn-large blue" href="#!">Agregar otro paquete</a>
+      <a class="waves-effect waves-light btn-large blue" href="#!" onclick="clone_box();" >Agregar otro paquete</a>
     </div>
     <div class="col s12 calculo-r">
       <!-- Respuesta de la calculadora -->
