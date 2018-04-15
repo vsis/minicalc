@@ -29,26 +29,44 @@
     </div>
     <!-- inputs y valores -->
     <div class="col s12 m12">
-      <div id="box">
+        <div hidden id="box">
           <div class="input-field col m3">
-              <input name="length" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <input name="length" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
               <label>LARGO</label>
             </div>
           <div class="input-field col m3">
-              <input name="width" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <input name="width" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
               <label>ANCHO</label>
             </div>
           <div class="input-field col m3">
-              <input name="height" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required>
+              <input name="height" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
               <label>ALTO</label>
             </div>
           <div class="input-field col m3">
-              <input name="weight" placeholder="Peso en libras (pounds)." type="text" class="validate" onchange="print_prices();" required>
+              <input name="weight" placeholder="Peso en libras (pounds)." type="text" class="validate" onchange="print_prices();" required value=0>
               <label>PESO</label>
           </div>
-      </div>
+        </div>
+        <div>
+          <div class="input-field col m3">
+              <input name="length" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
+              <label>LARGO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="width" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
+              <label>ANCHO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="height" placeholder="Medidas en pulgadas (inches)." type="text" class="validate" onchange="print_prices();" required value=0>
+              <label>ALTO</label>
+            </div>
+          <div class="input-field col m3">
+              <input name="weight" placeholder="Peso en libras (pounds)." type="text" class="validate" onchange="print_prices();" required value=0>
+              <label>PESO</label>
+          </div>
+        </div>
         <!-- Al darle click al botón, se debe agregar otra caja. -->
-      <a class="waves-effect waves-light btn-large blue" href="#!" onclick="clone_box();" >Agregar otro paquete</a>
+      <a class="waves-effect waves-light btn-large blue" href="#!" onclick="clone_box(); print_prices();" >Agregar otro paquete</a>
     </div>
     <div class="col s12 calculo-r">
       <!-- Respuesta de la calculadora -->

@@ -41,10 +41,10 @@ function print_prices() {
     var total_maritime = 0;
     var total_aereal = 0;
     for (var i = 0; i < boxes; i++) {
-        var height = height_tags[i].value;
-        var width  = width_tags[i].value;
-        var length = length_tags[i].value;
-        var weight = weight_tags[i].value;
+        var height = ! isNaN(height_tags[i].value) ? height_tags[i].value : 0;
+        var width  = ! isNaN(width_tags[i].value) ? width_tags[i].value : 0;
+        var length = ! isNaN(length_tags[i].value) ? length_tags[i].value : 0;
+        var weight = ! isNaN(weight_tags[i].value) ? weight_tags[i].value : 0;
         var maritime = get_price(false, height, width, length, weight);
         var aereal   = get_price(true, height, width, length, weight);
         total_maritime += maritime;
@@ -57,5 +57,7 @@ function print_prices() {
 function clone_box() {
     var box = $('#box')[0];
     var cloned = box.cloneNode(true);
+    cloned.hidden = false;
+    cloned.id = "";
     box.parentNode.insertBefore(cloned, box);
 }
