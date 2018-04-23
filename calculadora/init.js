@@ -11,6 +11,9 @@ $(document).ready(function(){
  */
 
 function aereal_price(volume, weight) {
+    if ((volume == 0) && (weight == 0)) {
+        return 0;
+    }
     var aereal_volume = volume / 166;
     var volume_price = aereal_volume * 3;
     var weight_price =  weight * 3;
@@ -18,6 +21,9 @@ function aereal_price(volume, weight) {
 }
 
 function maritime_price(volume, weight) {
+    if ((volume == 0) && (weight == 0)) {
+        return 0;
+    }
     var volume_price = (volume * 12 / 1728);
     var weight_price = weight * 12;
     return Math.max(volume_price, weight_price, 35);
