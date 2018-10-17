@@ -53,6 +53,12 @@ function print_prices() {
         var weight = ! isNaN(weight_tags[i].value) ? weight_tags[i].value : 0;
         var maritime = get_price(false, height, width, length, weight);
         var aereal   = get_price(true, height, width, length, weight);
+        /* very stupid feature */
+        if (maritime > aereal) {
+            var tmp = maritime;
+            maritime = aereal;
+            aereal = tmp;
+        }
         total_maritime += maritime;
         total_aereal += aereal;
     }
